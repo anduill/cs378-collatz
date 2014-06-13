@@ -25,15 +25,39 @@ std::pair<int, int> collatz_read (std::istream& r) {
         return std::make_pair(0, 0);
     int j;
     r >> j;
+	int temp = i;
+	if(j < i){
+		i = j;
+		j = temp;
+	}
     return std::make_pair(i, j);}
+
+int get_cycle_length(int n){
+	int cycle_length = 1;
+	while(n > 1){
+		if(n%2 == 0){
+			n = n / 2;
+		}
+		else{
+			n = n * 3 + 1;
+		}
+	}
+} 
 
 // ------------
 // collatz_eval
 // ------------
 
 int collatz_eval (int i, int j) {
-    // <your code>
-    return 1;}
+	int count = 1;
+    for(int k = i; k < j+1; k++){
+    	int cycle_length = get_cycle_length(k);
+		if(cycle_length > count){
+			count = cycle_length;
+		}
+    }
+    return count;
+}
 
 // -------------
 // collatz_print
