@@ -41,7 +41,9 @@ int get_cycle_length(int n){
 		else{
 			n = n * 3 + 1;
 		}
+		cycle_length++;
 	}
+	return cycle_length;
 } 
 
 // ------------
