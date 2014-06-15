@@ -76,17 +76,17 @@ TEST(Collatz, eval_3) {
     ASSERT_EQ(89, v);}
 
 TEST(Collatz, eval_4) {
+    const int v = collatz_eval(900, 1000);
+    ASSERT_EQ(174, v);
+}
+
+TEST(Collatz, cache_behavior){
 	std::map<unsigned int, unsigned int> test_map;
 	test_map[8U] = 7U;
 	test_map[9U] = 5U;
 	test_map[10U] = 75U;
-	std::cout << test_map[8U] << std::endl;
-	if(test_map[89U] == 0){
-		std::cout << "null element has been found" << std::endl;
-	}
-	std::cout << (test_map[89U] == 0) << std::endl;
-    const int v = collatz_eval(900, 1000);
-    ASSERT_EQ(174, v);
+	ASSERT_EQ(test_map[8U], 7U);
+	ASSERT_EQ(test_map[89U], 0);
 }
 
 // -----
