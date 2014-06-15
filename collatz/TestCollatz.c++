@@ -80,7 +80,7 @@ TEST(Collatz, eval_4) {
 	test_map[8U] = 7U;
 	test_map[9U] = 5U;
 	test_map[10U] = 75U;
-	cout << test_map[8U] << endl;
+	std::cout << test_map[8U] << std:: endl;
     const int v = collatz_eval(900, 1000);
     ASSERT_EQ(174, v);
 }
