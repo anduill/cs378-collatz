@@ -85,8 +85,10 @@ TEST(Collatz, cache_behavior){
 	test_map[8U] = 7U;
 	test_map[9U] = 5U;
 	test_map[10U] = 75U;
+	unsigned int zero = test_map[89U];
 	ASSERT_EQ(test_map[8U], 7U);
 	ASSERT_EQ(test_map[89U], 0);
+	ASSERT_EQ(zero, 0);
 }
 
 // -----

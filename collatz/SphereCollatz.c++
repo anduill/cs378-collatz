@@ -44,7 +44,9 @@ std::pair<unsigned int, unsigned int> collatz_read (std::istream& r) {
 
 unsigned int get_cycle_length(unsigned int n){
 	unsigned int cycle_length = 1U;
+	unsigned int number_of_iterations = 0U;
 	while(n > 1U){
+		
 		if(n%2U == 0U){
 			n = n / 2U;
 		}
