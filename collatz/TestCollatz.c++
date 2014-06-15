@@ -39,6 +39,7 @@ To obtain coverage of the test:
 #include <sstream>  // istringtstream, ostringstream
 #include <string>   // ==
 #include <utility>  // make_pair, pair
+#include <map>
 
 #include "gtest/gtest.h"
 
@@ -75,8 +76,14 @@ TEST(Collatz, eval_3) {
     ASSERT_EQ(89, v);}
 
 TEST(Collatz, eval_4) {
+	std::map<unsigned int, unsigned int> test_map;
+	test_map[8U] = 7U;
+	test_map[9U] = 5U;
+	test_map[10U] = 75U;
+	cout << test_map[8U] << endl;
     const int v = collatz_eval(900, 1000);
-    ASSERT_EQ(174, v);}
+    ASSERT_EQ(174, v);
+}
 
 // -----
 // print

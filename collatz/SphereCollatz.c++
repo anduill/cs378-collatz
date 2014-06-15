@@ -11,12 +11,13 @@
 #include <cassert>  // assert
 #include <iostream> // endl, istream, ostream
 #include <utility>  // make_pair, pair
-
+#include <map>
 //#include "Collatz.h"
 
 // ------------
 // collatz_read
 // ------------
+std::map<unsigned int, unsigned int> collatz_cache;
 
 std::pair<unsigned int, unsigned int> ordered_pair(std::pair<unsigned int, unsigned int> a_pair){
 	unsigned int i = a_pair.first;
