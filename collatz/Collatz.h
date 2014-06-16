@@ -23,7 +23,7 @@
  * @param  r a  std::istream
  * @return a pair of the two ints, otherwise a pair of zeros
  */
-std::pair<int, int> collatz_read (std::istream&);
+std::pair<unsigned int, unsigned int> collatz_read (std::istream&);
 
 // ------------
 // collatz_eval
@@ -34,7 +34,7 @@ std::pair<int, int> collatz_read (std::istream&);
  * @param j the end       of the range, inclusive
  * @return the max cycle length in the range [i, j]
  */
-int collatz_eval (int, int);
+unsigned int collatz_eval (unsigned int, unsigned int);
 
 // -------------
 // collatz_print
@@ -47,7 +47,7 @@ int collatz_eval (int, int);
  * @param j the end       of the range, inclusive
  * @param v the max cycle length
  */
-void collatz_print (std::ostream&, int, int, int);
+void collatz_print (std::ostream&, unsigned int, unsigned int, unsigned int);
 
 // -------------
 // collatz_solve

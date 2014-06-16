@@ -11,13 +11,13 @@
 #include <cassert>  // assert
 #include <iostream> // endl, istream, ostream
 #include <utility>  // make_pair, pair
-#include <map>
 //#include "Collatz.h"
 
 // ------------
 // collatz_read
 // ------------
-std::map<unsigned int, unsigned int> collatz_cache;
+
+unsigned int array_cache[4000000] = {0U};
 
 std::pair<unsigned int, unsigned int> ordered_pair(std::pair<unsigned int, unsigned int> a_pair){
 	unsigned int i = a_pair.first;
@@ -45,16 +45,28 @@ std::pair<unsigned int, unsigned int> collatz_read (std::istream& r) {
 unsigned int get_cycle_length(unsigned int n){
 	unsigned int cycle_length = 1U;
 	unsigned int number_of_iterations = 0U;
+	unsigned int original_number = n;
 	while(n > 1U){
-		
+		if(n < 4000000){
+			unsigned int cached_val = array_cache[n];
+			if(cached_val != 0U){
+				unsigned int answer =  array_cache[n] + number_of_iterations;
+				if(original_number != n){
+					array_cache[original_number] = answer;
+				}			
+				return answer;
+			}
+		}		
 		if(n%2U == 0U){
-			n = n / 2U;
-		}
+			n = n >> 1;			
+		}	
 		else{
-			n = n * 3U + 1U;
+			n = 3*n + 1;
 		}
-		cycle_length++;
+		number_of_iterations++;
+		cycle_length++;		
 	}
+	array_cache[original_number] = cycle_length;
 	return cycle_length;
 }
 

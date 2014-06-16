@@ -11,18 +11,20 @@
 #include <cassert>  // assert
 #include <iostream> // endl, istream, ostream
 #include <utility>  // make_pair, pair
-
+#include <map>
 #include "Collatz.h"
 
 // ------------
 // collatz_read
 // ------------
 
-std::pair<int, int> ordered_pair(std::pair<int, int> a_pair){
-	int i = a_pair.first;
-	int j = a_pair.second;
+unsigned int array_cache[4000000] = {0U};
+
+std::pair<unsigned int, unsigned int> ordered_pair(std::pair<unsigned int, unsigned int> a_pair){
+	unsigned int i = a_pair.first;
+	unsigned int j = a_pair.second;
 	
-	int temp = i;
+	unsigned int temp = i;
 	if(j < i){
 		i = j;
 		j = temp;
@@ -30,27 +32,41 @@ std::pair<int, int> ordered_pair(std::pair<int, int> a_pair){
 	return std::make_pair(i,j);	
 }
 
-std::pair<int, int> collatz_read (std::istream& r) {
-    int i;
+std::pair<unsigned int, unsigned int> collatz_read (std::istream& r) {
+    unsigned int i;
     r >> i;
     if (!r)
-        return std::make_pair(0, 0);
-    int j;
+        return std::make_pair(0U, 0U);
+    unsigned int j;
     r >> j;	
     return std::make_pair(i, j);
 }
 
-int get_cycle_length(int n){
-	int cycle_length = 1;
-	while(n > 1){
-		if(n%2 == 0){
-			n = n / 2;
-		}
+unsigned int get_cycle_length(unsigned int n){
+	unsigned int cycle_length = 1U;
+	unsigned int number_of_iterations = 0U;
+	unsigned int original_number = n;
+	while(n > 1U){
+		if(n < 4000000){
+			unsigned int cached_val = array_cache[n];
+			if(cached_val != 0U){
+				unsigned int answer =  array_cache[n] + number_of_iterations;
+				if(original_number != n){
+					array_cache[original_number] = answer;
+				}			
+				return answer;
+			}
+		}		
+		if(n%2U == 0U){
+			n = n >> 1;			
+		}	
 		else{
-			n = n * 3 + 1;
+			n = 3*n + 1;
 		}
-		cycle_length++;
+		number_of_iterations++;
+		cycle_length++;		
 	}
+	array_cache[original_number] = cycle_length;
 	return cycle_length;
 } 
 
@@ -58,10 +74,10 @@ int get_cycle_length(int n){
 // collatz_eval
 // ------------
 
-int collatz_eval (int i, int j) {
-	int count = 1;
-    for(int k = i; k < j+1; k++){
-    	int cycle_length = get_cycle_length(k);
+unsigned int collatz_eval (unsigned int i, unsigned int j) {
+	unsigned int count = 1U;
+    for(unsigned int k = i; k < j+1U; k++){
+    	unsigned int cycle_length = get_cycle_length(k);
 		if(cycle_length > count){
 			count = cycle_length;
 		}
@@ -73,7 +89,7 @@ int collatz_eval (int i, int j) {
 // collatz_print
 // -------------
 
-void collatz_print (std::ostream& w, int i, int j, int v) {
+void collatz_print (std::ostream& w, unsigned int i, unsigned int j, unsigned int v) {
     w << i << " " << j << " " << v << std::endl;}
 
 // -------------
@@ -82,12 +98,12 @@ void collatz_print (std::ostream& w, int i, int j, int v) {
 
 void collatz_solve (std::istream& r, std::ostream& w) {
     while (true) {
-        const std::pair<int, int> p = collatz_read(r);
-        if (p == std::make_pair(0, 0)){
+        const std::pair<unsigned int, unsigned int> p = collatz_read(r);
+        if (p == std::make_pair(0U, 0U)){
         	return;
         }
-		const std::pair<int, int> ordered_p = ordered_pair(p);
-        const int v = collatz_eval(ordered_p.first, ordered_p.second);
+		const std::pair<unsigned int, unsigned int> ordered_p = ordered_pair(p);
+        const unsigned int v = collatz_eval(ordered_p.first, ordered_p.second);
         collatz_print(w, p.first, p.second, v);
 	}
 }
