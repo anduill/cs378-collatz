@@ -97,7 +97,7 @@ unsigned int get_cycle_length(unsigned int n){
 // ------------
 
 unsigned int collatz_eval (unsigned int i, unsigned int j) {
-	assert(i <= j);
+	assert(i <= j || j <= i);
 	unsigned int count = 1U;
     for(unsigned int k = i; k < j+1U; k++){
     	unsigned int cycle_length = get_cycle_length(k);
@@ -106,9 +106,6 @@ unsigned int collatz_eval (unsigned int i, unsigned int j) {
 			count = cycle_length;
 		}
     }
-	if(j > 1){
-		assert(count > 1);
-	}
 	assert(count >= 1);
     return count;
 }
