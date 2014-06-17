@@ -1,0 +1,179 @@
+commit 4f299a3a46670fbecb4583254a94392030075daa
+Author: David Garcia <anduill@yahoo.com>
+Date:   Tue Jun 17 18:21:41 2014 -0500
+
+    #10: added doxygen documentation
+
+commit 21033c1269304c86f3bfaafb527791962f5a83a4
+Author: David <dgarcia@nuve.us>
+Date:   Tue Jun 17 18:10:15 2014 -0500
+
+    #7: added TestCollatz.out file for unit tests
+
+commit 91ec1595f947ebadce5e1869bed39fba89f01c9d
+Author: David Garcia <anduill@yahoo.com>
+Date:   Tue Jun 17 17:57:42 2014 -0500
+
+    #7: added RunCollatz.out acceptance tests
+
+commit d4bcc3b0a6c1fade4abf1af4ecf76580a9edd88f
+Author: David <dgarcia@nuve.us>
+Date:   Tue Jun 17 17:46:18 2014 -0500
+
+    #7: added 1000 acceptance tests to RunCollatz.in
+
+commit 12bfdf40534c9b99d0add1f251b8a3382897d899
+Author: David <dgarcia@nuve.us>
+Date:   Tue Jun 17 17:29:43 2014 -0500
+
+    #4 adding one more number pair to solve_cache_2
+
+commit fde9945a87c28af1cf190ff9b0aa750a8d4e6cbd
+Author: David <dgarcia@nuve.us>
+Date:   Tue Jun 17 17:22:53 2014 -0500
+
+    added get_cycle_length method to Collatz.h
+
+commit de8f286e48c536eb668d8102a5b79fffa7ac1f32
+Author: David <dgarcia@nuve.us>
+Date:   Tue Jun 17 17:19:51 2014 -0500
+
+    #4 added more test-data and some more tests for Collatz
+
+commit c48a80e525fa51e4440807f6ac1aadd657f5a1bd
+Author: David <dgarcia@nuve.us>
+Date:   Tue Jun 17 17:17:38 2014 -0500
+
+    #4 added more test-data and some more tests for Collatz
+
+commit cad524676b9dd68b951f67e7514b040009fd152c
+Author: David Garcia <anduill@yahoo.com>
+Date:   Tue Jun 17 17:00:54 2014 -0500
+
+    #4 fixed bug in unit test of cache
+
+commit 0d0a175d1486360b2fc3c32947bddf919ac261c5
+Author: David <dgarcia@nuve.us>
+Date:   Tue Jun 17 16:58:15 2014 -0500
+
+    #4 added unit test for cache logic
+
+commit 2af5f95ea736b5810ccf164c84b638e288e2266b
+Author: David Garcia <anduill@yahoo.com>
+Date:   Tue Jun 17 16:50:38 2014 -0500
+
+    #4 fixed bugs in eval tests
+
+commit edc0784617eb40491b371c6b3e56ad5fde0f846b
+Author: David <dgarcia@nuve.us>
+Date:   Tue Jun 17 16:38:44 2014 -0500
+
+    added some more unit tests
+
+commit 9f37b079b48bdadd99bf238133fd13df7921bf4a
+Author: David Garcia <anduill@yahoo.com>
+Date:   Tue Jun 17 16:24:09 2014 -0500
+
+    #4: fixed some unit tests and asserts
+
+commit 8d562d9098b2161c4b6feb502174fd58b6b3725f
+Author: David <dgarcia@nuve.us>
+Date:   Mon Jun 16 20:23:27 2014 -0500
+
+    #4 adding more unit tests to increase coverage
+
+commit f254b97af37f411d66a7256f44245ac28b00bfd6
+Author: David Garcia <anduill@yahoo.com>
+Date:   Mon Jun 16 19:58:49 2014 -0500
+
+    #4: fixed compile error in unit test by making entry in Collatz.h
+
+commit 2490b7bb3f3b352f3b392aa7d878f5302b430610
+Author: David <dgarcia@nuve.us>
+Date:   Mon Jun 16 19:51:26 2014 -0500
+
+    #4 wrote up some more unit tests for getting better code coverage
+
+commit 1a6de35e4d8410276227916e482d6ebfb9b68f4b
+Author: David <dgarcia@nuve.us>
+Date:   Sun Jun 15 23:50:36 2014 -0500
+
+    migrate corrections from SphereCollatz to Collatz
+
+commit ba4840fae3de05b1ba2706996bc9b4c3a488fa1e
+Author: David <dgarcia@nuve.us>
+Date:   Sat Jun 14 19:59:54 2014 -0500
+
+    added test for comparing 0 and 0U
+
+commit ca81fc56afa01ff8aff1cbeff541ff2a831e04bb
+Author: David <dgarcia@nuve.us>
+Date:   Sat Jun 14 19:47:33 2014 -0500
+
+    added cache tests to google-tests
+
+commit 991accac769551073ad04b0a6d7cb37eaa777181
+Author: David Garcia <anduill@yahoo.com>
+Date:   Sat Jun 14 19:41:48 2014 -0500
+
+    added example of null check to map
+
+commit 013b52c24858105552a3f4a1de349bb8e3736c56
+Author: David <dgarcia@nuve.us>
+Date:   Sat Jun 14 19:33:22 2014 -0500
+
+    adding a possible error
+
+commit 5391154e1c0374eb16b7c2816fe5daffdf338d61
+Author: David Garcia <anduill@yahoo.com>
+Date:   Sat Jun 14 19:29:13 2014 -0500
+
+    fixed compile error in TestCollatz
+
+commit 481760ba22109644565fa7ad439a09fca5789217
+Author: David <dgarcia@nuve.us>
+Date:   Sat Jun 14 19:25:05 2014 -0500
+
+    adding the cache as global variable
+
+commit c9abb979e754a13409cfc2160c430b1abac79fdb
+Author: David <dgarcia@nuve.us>
+Date:   Thu Jun 12 23:54:22 2014 -0500
+
+    Sphere submission for version 2: completed
+
+commit 8bf7f33ba90255ca974591b40247094d18ce0527
+Author: David <dgarcia@nuve.us>
+Date:   Thu Jun 12 23:25:50 2014 -0500
+
+    Create SphereCollatz for the Sphere Submission: First sphere acceptance run.
+
+commit 7919575e37c89e4dd0d12dd1044da76a062846ff
+Author: David Garcia <anduill@yahoo.com>
+Date:   Thu Jun 12 22:06:29 2014 -0500
+
+    Implement Basic Collatz Solution: Basic tests pass for the basic implementation
+
+commit af285f4ea4e3e8865940e03b17095fc4940fd30d
+Author: David <dgarcia@nuve.us>
+Date:   Thu Jun 12 21:58:26 2014 -0500
+
+    Implement Basic Collatz Solution:: first draft of basic collatz solution
+
+commit fefb062731a90fe620a5542f03f3fffbcd6b2ba5
+Author: David Garcia <anduill@yahoo.com>
+Date:   Tue Jun 10 23:34:29 2014 -0500
+
+    added SphereCollatz.++ to repo
+
+commit 1ac1a32a5cb84c3df141ac7145f01b15c0732960
+Author: David <dgarcia@nuve.us>
+Date:   Tue Jun 10 17:53:59 2014 -0500
+
+    first commit for collatz assignment
+
+commit c2cf3d345240aeb9cce308f03f14b61af152412e
+Author: anduill <anduill@yahoo.com>
+Date:   Tue Jun 10 17:26:32 2014 -0500
+
+    Initial commit
