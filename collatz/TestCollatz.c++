@@ -203,10 +203,10 @@ TEST(Collatz, solve_cache_1) {
     ASSERT_EQ("1 10 20\n100 200 125\n201 210 89\n900 1000 174\n10 1 20\n200 100 125\n210 201 89\n1000 900 174\n", w.str());}
 	
 TEST(Collatz, solve_cache_2) {
-    std::istringstream r("1 10\n100 200\n201 210\n900 1000\n10 1\n200 100\n210 201\n1000 900\n");
+    std::istringstream r("1 10\n100 200\n201 210\n900 1000\n10 1\n200 100\n210 201\n1000 900\n1 999990\n");
     std::ostringstream w;
     collatz_solve(r, w);
-    ASSERT_EQ("1 10 20\n100 200 125\n201 210 89\n900 1000 174\n10 1 20\n200 100 125\n210 201 89\n1000 900 174\n", w.str());}
+    ASSERT_EQ("1 10 20\n100 200 125\n201 210 89\n900 1000 174\n10 1 20\n200 100 125\n210 201 89\n1000 900 174\n1 999990 525\n", w.str());}
 /*
 Sample Input
 1 10
