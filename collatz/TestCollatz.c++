@@ -63,8 +63,8 @@ TEST(Collatz, read) {
 TEST(Collatz, ordered_pair){
 	const std::pair<unsigned int, unsigned int> p = std::make_pair(10,1);
 	const std::pair<unsigned int, unsigned int> q = ordered_pair(p);
-	ASSERT_EQ(1, p.first);
-	ASSERT_EQ(10, p.second);
+	ASSERT_EQ(1, q.first);
+	ASSERT_EQ(10, q.second);
 }
 
 // ----

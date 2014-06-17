@@ -14,6 +14,8 @@
 #include <iostream> // istream, ostream
 #include <utility>  // pair
 
+
+std::pair<unsigned int, unsigned int> ordered_pair(std::pair<unsigned int, unsigned int> a_pair);
 // ------------
 // collatz_read
 // ------------
