@@ -161,7 +161,7 @@ TEST(Collatz, cycle_length_2){
 	ASSERT_EQ(16,v);
 }
 
-TEST(Collatz, cycle_length_1){
+TEST(Collatz, cycle_length_3){
 	int v = get_cycle_length(45);
 	ASSERT_EQ(17,v);
 }
