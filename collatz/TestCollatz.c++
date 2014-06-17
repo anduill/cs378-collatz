@@ -149,14 +149,41 @@ TEST(Collatz, cache_behavior){
 	ASSERT_EQ(zero, 0);
 }
 
+
+/*Get Cycle Length*/
+TEST(Collatz, cycle_length_1){
+	int v = get_cycle_length(5);
+	ASSERT_EQ(6,v);
+}
+
+TEST(Collatz, cycle_length_2){
+	int v = get_cycle_length(150);
+	ASSERT_EQ(16,v);
+}
+
+TEST(Collatz, cycle_length_1){
+	int v = get_cycle_length(45);
+	ASSERT_EQ(17,v);
+}
+
 // -----
 // print
 // -----
 
-TEST(Collatz, print) {
+TEST(Collatz, print_1) {
     std::ostringstream w;
     collatz_print(w, 1, 10, 20);
     ASSERT_EQ("1 10 20\n", w.str());}
+	
+TEST(Collatz, print_2) {
+    std::ostringstream w;
+    collatz_print(w, 10, 30, 40);
+    ASSERT_EQ("10 30 40\n", w.str());}
+		
+TEST(Collatz, print_3) {
+    std::ostringstream w;
+    collatz_print(w, 100, 1000, 200);
+    ASSERT_EQ("100 1000 200\n", w.str());}
 
 // -----
 // solve
@@ -169,7 +196,13 @@ TEST(Collatz, solve) {
     ASSERT_EQ("1 10 20\n100 200 125\n201 210 89\n900 1000 174\n", w.str());}
 
 
-TEST(Collatz, solve_cache) {
+TEST(Collatz, solve_cache_1) {
+    std::istringstream r("1 10\n100 200\n201 210\n900 1000\n10 1\n200 100\n210 201\n1000 900\n");
+    std::ostringstream w;
+    collatz_solve(r, w);
+    ASSERT_EQ("1 10 20\n100 200 125\n201 210 89\n900 1000 174\n10 1 20\n200 100 125\n210 201 89\n1000 900 174\n", w.str());}
+	
+TEST(Collatz, solve_cache_2) {
     std::istringstream r("1 10\n100 200\n201 210\n900 1000\n10 1\n200 100\n210 201\n1000 900\n");
     std::ostringstream w;
     collatz_solve(r, w);
