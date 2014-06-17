@@ -55,13 +55,13 @@ To obtain coverage of the test:
 
 TEST(Collatz, read_1) {
     std::istringstream r("1 10\n");
-    const std::pair<int, int> p = collatz_read(r);
+    std::pair<int, int> p = collatz_read(r);
     ASSERT_EQ( 1, p.first);
     ASSERT_EQ(10, p.second);}
 
 TEST(Collatz, read_2) {
     std::istringstream r("1 10\n100 200\n");
-    const std::pair<int, int> p = collatz_read(r);
+    std::pair<int, int> p = collatz_read(r);
     ASSERT_EQ( 1, p.first);
     ASSERT_EQ(10, p.second);
 	p = collatz_read(r);
@@ -71,7 +71,7 @@ TEST(Collatz, read_2) {
 
 TEST(Collatz, read_3) {
     std::istringstream r("1 10\n100 200\n300 500\n");
-    const std::pair<int, int> p = collatz_read(r);
+    std::pair<int, int> p = collatz_read(r);
 	p = collatz_read(r);
 	p = collatz_read(r);
     ASSERT_EQ(300, p.first);
@@ -80,7 +80,7 @@ TEST(Collatz, read_3) {
 			
 TEST(Collatz, read_4) {
     std::istringstream r("1 10\n100 200\n");
-    const std::pair<int, int> p = collatz_read(r);
+    std::pair<int, int> p = collatz_read(r);
 	p = collatz_read(r);
     ASSERT_EQ(100, p.first);
     ASSERT_EQ(200, p.second);}			
@@ -129,11 +129,13 @@ TEST(Collatz, eval_4) {
 }
 TEST(Collatz, eval_5) {
 	const int v = collatz_eval(150, 150);
-	ASSERT_EQ(15, v);
+	std::cout << v << std::endl;
+	ASSERT_EQ(16, v);
 }
 TEST(Collatz, eval_6) {
 	const int v = collatz_eval(5, 5);
-	ASSERT_EQ(5, v);
+	std::cout << v << std::endl;
+	ASSERT_EQ(6, v);
 }
 
 TEST(Collatz, cache_behavior){
