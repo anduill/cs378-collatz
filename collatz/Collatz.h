@@ -14,7 +14,11 @@
 #include <iostream> // istream, ostream
 #include <utility>  // pair
 
-
+/**
+ * read two ints
+ * @param a  std::pair<unsigned int, unsigned int> that may, or may not, be ordered.
+ * @return a pair of the two ints that are ordered with least-int as first.
+ */
 std::pair<unsigned int, unsigned int> ordered_pair(std::pair<unsigned int, unsigned int> a_pair);
 // ------------
 // collatz_read

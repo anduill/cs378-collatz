@@ -60,13 +60,26 @@ TEST(Collatz, read) {
     ASSERT_EQ(10, p.second);}
 
 	/*Ordered Pair*/
-TEST(Collatz, ordered_pair){
+TEST(Collatz, ordered_pair_1){
 	const std::pair<unsigned int, unsigned int> p = std::make_pair(10,1);
 	const std::pair<unsigned int, unsigned int> q = ordered_pair(p);
 	ASSERT_EQ(1, q.first);
 	ASSERT_EQ(10, q.second);
 }
 
+TEST(Collatz, ordered_pair_2){
+	const std::pair<unsigned int, unsigned int> p = std::make_pair(1,10);
+	const std::pair<unsigned int, unsigned int> q = ordered_pair(p);
+	ASSERT_EQ(1, q.first);
+	ASSERT_EQ(10, q.second);
+}
+
+TEST(Collatz, ordered_pair_3){
+	const std::pair<unsigned int, unsigned int> p = std::make_pair(100,15);
+	const std::pair<unsigned int, unsigned int> q = ordered_pair(p);
+	ASSERT_EQ(1, q.first);
+	ASSERT_EQ(10, q.second);
+}
 // ----
 // eval
 // ----
@@ -86,6 +99,14 @@ TEST(Collatz, eval_3) {
 TEST(Collatz, eval_4) {
     const int v = collatz_eval(900, 1000);
     ASSERT_EQ(174, v);
+}
+TEST(Collatz, eval_5) {
+	const int v = collatz_eval(1000, 900);
+	ASSERT_EQ(174, v);
+}
+TEST(Collatz, eval_6) {
+	const int v = collatz_eval(5, 5);
+	ASSERT_EQ(5, v);
 }
 
 TEST(Collatz, cache_behavior){
