@@ -31,6 +31,12 @@ std::pair<unsigned int, unsigned int> ordered_pair(std::pair<unsigned int, unsig
  */
 std::pair<unsigned int, unsigned int> collatz_read (std::istream&);
 
+/**
+read an in
+@param n a unsigned int
+@return cycle_length of n
+**/
+unsigned int get_cycle_length(unsigned int n);
 // ------------
 // collatz_eval
 // ------------
